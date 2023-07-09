@@ -630,6 +630,19 @@ a#logo {
   visibility: visible;
   color: #4a4a4a;
 }
+
+.portfolio-item .thumb-inner i {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  margin-bottom: 0px;
+}
+.portfolio-item:hover .thumb-inner i {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  color: #4a4a4a;
+}
 .portfolio-item:hover .thumb-inner {
   border-radius: 10px;
   height: 100%;
