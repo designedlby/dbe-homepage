@@ -10,12 +10,13 @@ body {
 }
 canvas{display:block}
 h1 {
+  text-align: center;
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff; 
-  font-family: "Source Sans Pro";
+  font-family: Impact, Charcoal, sans-serif, "Source Sans Pro";
   font-size: 5em;
   font-weight: 900;
   -webkit-user-select: none;
@@ -29,13 +30,78 @@ right: 20px;
 width: 50px;
 height: auto;
 }
+
+#elll {
+     font-size: 1.5em;
+    color: #ffe185;
+    font-family: Impact, Charcoal, sans-serif;
+    text-shadow: 0px 0px 0 rgb(230,200,108),
+                 1px 1px 0 rgb(204,174,82),
+                 2px 2px 0 rgb(179,149,56),
+                 3px 3px 0 rgb(153,123,31),
+                 4px 4px 0 rgb(128,98,6),
+                 5px 5px 0 rgb(102,72,0),
+                 6px 6px 0 rgb(77,47,0),
+                 7px 7px 0 rgb(51,21,0),
+                 8px 8px 0 rgb(26,-4,0),
+                 9px 9px 0 rgb(0,-30,0),
+                 10px 10px  0 rgb(-25,-55,0),
+                 11px 11px 10px rgba(0,0,0,0.37),
+                 11px 11px 1px rgba(0,0,0,0.5),
+                 0px 0px 10px rgba(0,0,0,.2);
+}
+
+.focus-in-contract-bck{-webkit-animation:focus-in-contract-bck 1s cubic-bezier(.25,.46,.45,.94) both;animation:focus-in-contract-bck 1s cubic-bezier(.25,.46,.45,.94) both}
+
+@-webkit-keyframes focus-in-contract-bck{0%{letter-spacing:1em;-webkit-transform:translateZ(300px);transform:translateZ(300px);-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-transform:translateZ(12px);transform:translateZ(12px);-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes focus-in-contract-bck{0%{letter-spacing:1em;-webkit-transform:translateZ(300px);transform:translateZ(300px);-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-transform:translateZ(12px);transform:translateZ(12px);-webkit-filter:blur(0);filter:blur(0);opacity:1}}
+
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
 </style>
 </head>
 <body>
 
 <a href="https://byellie.art/"><img id="hbtn" src = "https://github.com/designedlby/designedlby.github.io/raw/main/images/Home%20button.svg"/></a>
-<h1>Happy Birthday</h1>
+<h1 onclick="copyit();location.href='https://account.noon.com/credits/';">Happy Birthday <br><span id="elll">ELLIE</span><br><span><button class="button-52" role="button">Your little gift</button>
+</span></h1>
+
 <canvas id="birthday"></canvas>
+<input style="display:none;" type="text" value="72E66E2F52432" id="myInput">
 
 <audio style="display:none;" controls autoplay loop>
   <source src="https://github.com/designedlby/designedlby.github.io/raw/main/images/video-bg.mp3" type="audio/mpeg">
@@ -202,5 +268,20 @@ document.ontouchstart = evt => birthday.onClick(evt)
 
   })()
 </script>
+
+<script>
+function copyit() {
+  // Get the text field
+  var copyText = document.getElementById("myInput");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+}
+</script>
+
 </body>
 </html>
