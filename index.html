@@ -1089,7 +1089,7 @@ function showcontent() {
 function closecontent() {
   document.getElementById("post-content").style.opacity = "0%";
   setTimeout(function(){ document.getElementById("post-content").style.zIndex = "-111"; }, 2000);
-  
+  document.getElementById("post-inner").scrollTop = "0";
   location.href = '#posts';
 }
 </script>
